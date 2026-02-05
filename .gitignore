@@ -1,0 +1,39 @@
+# ===== Security =====
+.ssh/id_*
+!.ssh/*.pub
+.gnupg/
+
+# ===== Caches & state =====
+.cache/
+.npm/
+.cargo/
+.nv/
+.pki/
+.mozilla/
+.zen/
+.local/share/Trash/
+
+# ===== Editors & tools =====
+.config/nvim/.cache/
+.config/nvim/.local/
+.config/nvim/.luarc.json
+.tmux/plugins/
+
+# ===== Themes & fonts =====
+.themes/
+.icons/
+.local/share/fonts/
+
+# ===== Env & overrides =====
+.env
+.env.*
+*.local
+
+# ===== OS / editor junk =====
+.DS_Store
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
