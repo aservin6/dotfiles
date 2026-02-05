@@ -1,0 +1,73 @@
+/* NORD PALETTE */
+@define-color bg        #2E3440; /* nord0 */
+@define-color bg-alt    #3B4252; /* nord1 */
+@define-color bg-light  #434C5E; /* nord2 */
+@define-color fg        #D8DEE9; /* nord4 */
+@define-color accent    #81A1C1; /* nord9 */
+
+/* GLOBAL */
+* {
+  font-family: "JetBrainsMono Nerd Font", sans-serif;
+  font-size: 16px;
+  color: @fg;
+}
+
+/* BAR */
+window#waybar {
+  background-color: transparent; /* nord0 w/ alpha */
+  border: none;
+}
+
+/* MODULES */
+#clock,
+#battery,
+#network,
+#pulseaudio {
+  padding: 0 12px;
+  background-color: @transparent;
+  margin: 4px 6px;
+  border-radius: 0px; /* squared */
+}
+
+/* SYSTEM TRAY */
+#tray {
+  padding: 0 10px;
+  background-color: transparent;
+  margin: 4px 6px;
+  border-radius: 0px;
+}
+
+/* WORKSPACES */
+#workspaces {
+  background-color: transparent;
+  border-radius: 0px;
+  margin: 4px 6px;
+  padding-right: 6px;
+}
+
+/* WORKSPACE BUTTONS */
+#workspaces button {
+  margin: 2px; /* optional enhancement */
+  border-radius: 2px;
+}
+
+/* ACTIVE WORKSPACE */
+#workspaces button.active {
+  background-color: transparent;
+  color: @bg;
+  border-radius: 100%;
+}
+
+/* HOVER */
+#workspaces button:hover {
+  background-color: @bg-light;
+}
+
+/* CUSTOM NOTIFICATIONS */
+#custom-notification {
+  background-color: transparent;
+  color: @fg;
+  padding: 0 13px 0 10px;
+  border-radius: 0px;
+  margin: 4px 6px;
+}

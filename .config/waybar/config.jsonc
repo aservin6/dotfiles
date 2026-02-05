@@ -1,0 +1,66 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 32,
+  "spacing": 6,
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "custom/music",
+    "pulseaudio",
+    "network",
+    "tray",
+    "custom/notification",
+  ],
+
+  "clock": {
+    "format": "{:%I:%M %p}",
+  },
+  "pulseaudio": {
+    "format": "  {volume}%",
+    "format-muted": " {volume}%",
+  },
+  "network": {
+    "format-wifi": " {essid}",
+    "format-ethernet": "모 {ipaddr}",
+    "format-disconnected": "⚠ Disconnected",
+  },
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", ""],
+  },
+  "tray": {
+    "spacing": 8,
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "active": "",
+    },
+    "persistent-workspaces": { "*": [1, 2, 3, 4, 5] },
+    "all-outputs": true,
+    "active-only": false,
+  },
+  "custom/music": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "waybar-module-music",
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "", // bell with alert
+      "none": "", // bell
+      "dnd-notification": "", // Do Not Disturb active + notification
+      "dnd-none": "", // DND icon only
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw", // toggle center
+    "on-click-right": "swaync-client -d -sw", // dismiss all
+    "escape": true,
+  },
+}
