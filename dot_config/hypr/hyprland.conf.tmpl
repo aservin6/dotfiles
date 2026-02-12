@@ -52,9 +52,9 @@ monitor=,preferred,auto,1
 ### AUTOSTART ###
 #################
 
-windowrule = workspace 2 silent, class:^(zen)$
-windowrule = workspace 3 silent, class:^(discord)$
-windowrule = workspace 4 silent, class:^(spotify)$
+windowrule = workspace 2 silent, match:class = zen-browser
+windowrule = workspace 3 silent, match:class = discord
+windowrule = workspace 4 silent, match:class = spotify-launcher
 
 
 # Autostart necessary processes (like notifications daemons, status bars, etc.)
