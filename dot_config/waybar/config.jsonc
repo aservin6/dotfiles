@@ -22,7 +22,7 @@
     "format-muted": " {volume}%",
   },
   "network": {
-    "format-wifi": " {essid}",
+    "format-wifi": "  {essid}",
     "format-ethernet": "모 {ipaddr}",
     "format-disconnected": "⚠ Disconnected",
   },

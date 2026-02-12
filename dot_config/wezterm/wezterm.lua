@@ -23,7 +23,7 @@ config.initial_rows = 28
 -- or, changing the font size and color scheme.
 config.font = wezterm.font("JetBrains Mono Nerd Font")
 config.font_size = 16
-config.color_scheme = "Catppuccin Mocha"
+config.color_scheme = "nord"
 
 config.window_background_opacity = 0.8
 config.use_fancy_tab_bar = false
