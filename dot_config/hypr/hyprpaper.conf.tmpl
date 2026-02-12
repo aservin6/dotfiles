@@ -1,0 +1,14 @@
+wallpaper {
+  {{ if eq .chezmoi.hostname "archlinux" }}
+  monitor = DP-3
+  fit_mode = cover
+  path = ~/Images/nord-ciry.png
+{{ end }}
+
+{{ if eq .chezmoi.hostname "arch-laptop" }}
+  monitor = eDP-1
+  fit_mode = cover
+  path = ~/Images/nord-city.png
+{{ end }}
+
+}

@@ -31,9 +31,15 @@ env = XCURSOR_THEME,Bibata-Modern-Ice
 ### MONITORS ###
 ################
 
+
+{{ if eq .chezmoi.hostname "archlinux" }}
 monitor=DP-3,2560x1440@165,0x0,1 
+{{ end }}
+
+{{ if eq .chezmoi.hostname "arch-laptop" }}
+monitor=,preferred,auto,1
+{{ end }}
 # monitor=HDMI-A-1,1920x1080@60,auto-left,1
-monitor = HDMI-A-1, disable
 # See https://wiki.hypr.land/Configuring/Monitors/
 
 ###################
@@ -141,7 +147,7 @@ decoration {
 
 # https://wiki.hypr.land/Configuring/Variables/#animations
 animations {
-    enabled = no, please :)
+    enabled = yes, please :)
 
     # Default animations, see https://wiki.hypr.land/Configuring/Animations/ for more
 
@@ -207,9 +213,15 @@ input {
     kb_layout = us
     kb_variant =
     kb_model =
+{{ if eq .chezmoi.hostname "archlinux" }}
     kb_options =
-    kb_rules =
+{{ end }}
 
+{{ if eq .chezmoi.hostname "arch-laptop" }}
+    kb_options = caps:escape, altwin:swap_alt_win
+{{ end }}
+
+    kb_rules =
     follow_mouse = 1
 
     sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
@@ -246,9 +258,3 @@ device {
 windowrule = suppressevent maximize, class:.*
 
 # Fix some dragging issues with XWayland
-windowrule = nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0
-windowrulev2 = opacity 0.95 0.90,class:^(rofi|wofi)$
-windowrulev2 = workspace 3 silent, class:^(discord)$
-layerrule = blur, wofi
-layerrule = ignorezero, wofi
-layerrule = ignorealpha 0.5, wofi

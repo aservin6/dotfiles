@@ -1,73 +1,163 @@
-/* NORD PALETTE */
+/* =========================
+   NORD PALETTE
+   ========================= */
 @define-color bg        #2E3440; /* nord0 */
 @define-color bg-alt    #3B4252; /* nord1 */
 @define-color bg-light  #434C5E; /* nord2 */
 @define-color fg        #D8DEE9; /* nord4 */
+@define-color fg-bright #ECEFF4; /* nord6 */
 @define-color accent    #81A1C1; /* nord9 */
+@define-color accent-soft #88C0D0; /* nord8 */
 
-/* GLOBAL */
+/* =========================
+   GLOBAL
+   ========================= */
 * {
   font-family: "JetBrainsMono Nerd Font", sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   color: @fg;
 }
 
-/* BAR */
 window#waybar {
-  background-color: transparent; /* nord0 w/ alpha */
+  background: transparent;
   border: none;
 }
 
-/* MODULES */
+/* =========================
+   SHARED MODULE BASE
+   ========================= */
 #clock,
 #battery,
 #network,
-#pulseaudio {
-  padding: 0 12px;
-  background-color: @transparent;
-  margin: 4px 6px;
-  border-radius: 0px; /* squared */
-}
-
-/* SYSTEM TRAY */
-#tray {
-  padding: 0 10px;
-  background-color: transparent;
-  margin: 4px 6px;
-  border-radius: 0px;
-}
-
-/* WORKSPACES */
-#workspaces {
-  background-color: transparent;
-  border-radius: 0px;
-  margin: 4px 6px;
-  padding-right: 6px;
-}
-
-/* WORKSPACE BUTTONS */
-#workspaces button {
-  margin: 2px; /* optional enhancement */
-  border-radius: 2px;
-}
-
-/* ACTIVE WORKSPACE */
-#workspaces button.active {
-  background-color: transparent;
-  color: @bg;
-  border-radius: 100%;
-}
-
-/* HOVER */
-#workspaces button:hover {
-  background-color: @bg-light;
-}
-
-/* CUSTOM NOTIFICATIONS */
+#pulseaudio,
+#tray,
 #custom-notification {
-  background-color: transparent;
-  color: @fg;
-  padding: 0 13px 0 10px;
-  border-radius: 0px;
+  padding: 4px 12px;
   margin: 4px 6px;
+  background: transparent;
+}
+
+/* =========================
+   CLOCK
+   ========================= */
+#clock {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: @fg-bright;
+}
+
+/* =========================
+   SYSTEM INDICATORS
+   ========================= */
+#battery,
+#network,
+#pulseaudio {
+  color: @fg;
+}
+
+#battery.charging {
+  color: @accent-soft;
+}
+
+#battery.critical {
+  color: #bf616a; /* nord11 */
+}
+
+/* =========================
+   SYSTEM TRAY
+   ========================= */
+#tray {
+  padding: 4px 10px;
+}
+
+/* =========================
+   WORKSPACES
+   ========================= */
+#workspaces {
+  margin: 4px 6px;
+  padding: 2px 6px;
+}
+
+#workspaces button {
+  padding: 2px 8px;
+  margin: 2px;
+  background: transparent;
+  border-radius: 4px;
+  color: @fg;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+/* Hovered workspace */
+#workspaces button:hover {
+  background: @bg-alt;
+}
+
+/* Active workspace — subtle Nord dot feel */
+#workspaces button.active {
+  background: @accent;
+  color: @bg;
+  font-weight: 600;
+}
+
+/* =========================
+   CUSTOM MEDIA
+   ========================= */
+#custom-media {
+  padding: 4px 14px;
+  margin: 4px 6px;
+
+  background: rgba(46, 52, 64, 0.85);
+  border-radius: 12px;
+
+  font-weight: 500;
+  color: @fg;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+/* Hover */
+#custom-media:hover {
+  background: rgba(59, 66, 82, 0.9);
+  color: @fg-bright;
+}
+
+/* Click */
+#custom-media:active {
+  background: rgba(67, 76, 94, 1);
+}
+
+/* Playing indicator */
+#custom-media.playing {
+  border-left: 3px solid @accent-soft;
+  padding-left: 11px;
+}
+
+/* Icon accent */
+#custom-media label:first-child {
+  color: @accent;
+}
+
+/* =========================
+   NOTIFICATIONS
+   ========================= */
+#custom-notification {
+  color: @fg;
+}
+
+/* =========================
+   TOOLTIP
+   ========================= */
+tooltip {
+  background: @bg;
+  border-radius: 6px;
+  border: 1px solid @bg-light;
+}
+
+tooltip label {
+  color: @fg-bright;
+  padding: 6px 10px;
 }

@@ -11,6 +11,7 @@
     "network",
     "tray",
     "custom/notification",
+    "battery",
   ],
 
   "clock": {
