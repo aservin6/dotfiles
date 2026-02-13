@@ -52,6 +52,23 @@ monitor=,preferred,auto,1
 #################
 ### AUTOSTART ###
 #################
+windowrule {
+    name = zen-startup
+    workspace = 2
+    match:class = ^(zen)$
+}
+
+windowrule {
+    name = discord-startup
+    workspace = 3
+    match:class = ^(discord)$
+}
+
+windowrule {
+    name = spotify-startup
+    workspace = 4
+    match:class = ^(spotify)$
+}
 
 # Autostart necessary processes (like notifications daemons, status bars, etc.)
 # Or execute your favorite apps at launch like this:
@@ -60,8 +77,8 @@ monitor=,preferred,auto,1
 # exec-once = nm-applet &
 exec-once = waybar & hyprpaper & swaync & hypridle & $terminal
 exec-once = [workspace 2 silent] zen-browser
-#exec-once = [workspace 3 silent] discord
-#exec-once = [workspace 4 silent] spotify
+exec-once = [workspace 3 silent] discord
+exec-once = [workspace 4 silent] spotify-launcher
 
 ############################
 ### ENVIRONMENT VARIABLES ###
