@@ -25,7 +25,11 @@ config.font = wezterm.font("JetBrains Mono Nerd Font")
 config.font_size = 16
 config.color_scheme = "nord"
 
+<<<<<<< Updated upstream
 config.window_background_opacity = 1.0
+=======
+config.window_background_opacity = 1
+>>>>>>> Stashed changes
 config.use_fancy_tab_bar = false
 config.tab_max_width = 16
 config.show_new_tab_button_in_tab_bar = false
