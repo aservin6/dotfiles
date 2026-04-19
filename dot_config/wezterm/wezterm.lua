@@ -22,10 +22,10 @@ config.initial_rows = 28
 
 -- or, changing the font size and color scheme.
 config.font = wezterm.font("JetBrains Mono Nerd Font")
-config.font_size = 16
+config.font_size = 18
 config.color_scheme = "nord"
 
-config.window_background_opacity = 1
+config.window_background_opacity = 0.85
 config.use_fancy_tab_bar = false
 config.tab_max_width = 16
 config.show_new_tab_button_in_tab_bar = false
