@@ -140,12 +140,12 @@ col.active_border = $blue $teal 45deg
 
 # https://wiki.hypr.land/Configuring/Variables/#decoration
 decoration {
-    rounding = 0
+    rounding = 1
     rounding_power = 2
 
     # Change transparency of focused and unfocused windows
-    active_opacity = 1.0
-    inactive_opacity = 0.9
+    active_opacity = 1
+    inactive_opacity = 0.85
 
     shadow {
         enabled = true
@@ -158,11 +158,10 @@ decoration {
     # https://wiki.hypr.land/Configuring/Variables/#blur
     blur {
         enabled = true
-        size = 4
-        passes = 2
+        size = 10
+        passes = 3
         new_optimizations = true
-        xray=false
-        vibrancy = 0.1696
+        ignore_opacity = false
     }
   
 }

@@ -22,25 +22,15 @@ config.initial_rows = 28
 
 -- or, changing the font size and color scheme.
 config.font = wezterm.font("JetBrains Mono Nerd Font")
-config.font_size = 18
+config.font_size = 20
 config.color_scheme = "nord"
 
-config.window_background_opacity = 0.85
+config.window_background_opacity = 0.625
 config.use_fancy_tab_bar = false
 config.tab_max_width = 16
 config.show_new_tab_button_in_tab_bar = false
 config.show_tabs_in_tab_bar = false
 config.enable_tab_bar = false
-
-config.colors = {
-	tab_bar = {
-		background = "rgba(30, 30, 46, 0.8)", -- catppuccin mocha-like transparent bg
-		inactive_tab = {
-			bg_color = "#313244",
-			fg_color = "#dfdfdf",
-		},
-	},
-}
 
 -- Keybinds
 -- config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 1000 }
