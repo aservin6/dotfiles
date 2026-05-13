@@ -1,9 +1,6 @@
 theme = Nord
-font-size = 18
+font-size = 20
 background-opacity = 0.75
-cursor-style = block
-cursor-style-blink = false
-adjust-cursor-thickness = 20
 window-padding-x = 5
 window-padding-y = 5
 window-padding-balance = true
